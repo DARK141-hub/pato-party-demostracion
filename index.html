@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi proyecto Tailwind</title>
+  <link href="styles.css" rel="stylesheet" />
+      <script src="https://cdn.tailwindcss.com"></script>
+      <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                'sea-spray': '#BAD6DA',
+                'baby-blue': '#E1F2F4',
+                'matcha': '#DDDD7B',
+                'sunshine': '#FFE797',
+                'bubble-gum': '#f691a9',
+                'blush': '#FFDBDF',
+              },
+            },
+          },
+        }
+      </script>
+</head>
+<body class="bg-sunshine text-center p-10">
+  
+<header class="fixed top-0 left-0 w-full bg-transparent flex justify-between items-center px-8 py-4 z-50">
+  <div class="text-2xl font-bold text-bubble-gum">Logo</div>
+  <nav>
+    <ul class="flex space-x-8">
+      <li><a href="#" class="text-bubble-gum hover:text-blue-400 transition font-bold">Inicio</a></li>
+      <li><a href="#" class="text-bubble-gum hover:text-blue-400 transition font-bold">Servicios</a></li>
+      <li><a href="#" class="text-bubble-gum hover:text-blue-400 transition font-bold">Acerca</a></li>
+      <li><a href="#" class="text-bubble-gum hover:text-blue-400 transition font-bold">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+<div class="h-24"></div>
+
+  <h1 class="text-5xl font-bold text-bubble-gum 
+  hover:scale-105 transition-all duration-300 cursor-pointer"><br>BIENVENIDO A <BR> PATO PARTY!!!</BR> </h1>
+  <p class="text-4xl font-bold text-bubble-gum mt-5 
+  hover:scale-105 transition-all duration-300 cursor-pointer">Ven y conoce todos nuestros servicios</p>
+  <button class="bg-sea-spray text-2xl text-blue-900 font-bold mt-7 
+  rounded-2xl px-8 py-2 border-blue-900 
+  hover:scale-105 hover:bg-white transition-all duration-300 hover:text-blue-900"> Conocer más </button>
+
+  <section id="card" 
+  class="bg-white rounded-[3rem] shadow-lg p-6 mt-10 max-w-5xl mx-auto ">
+    <h2 class="text-3xl font-bold text-bubble-gum mb-4 mt-9">Nuestros Servicios</h2>
+    <p class="text-gray-500 font-bold mb-4 mt-9">
+      En Pato Party, ofrecemos una variedad de servicios para hacer de tu fiesta un evento inolvidable.
+      Organizamos fiestas inolvidables para niños, llenas de diversion para todas las edades</p>
+    <div class="flex space-x-4">
+    <div class="bg-gray-100 rounded-md p-4 w-1/3">
+      <img src="ruta/a/foto1.jpg" alt="Foto 1" class="w-full h-auto rounded-md mb-2">
+      <h3 class="font-semibold text-lg mb-1">espacio 1</h3>
+      <p class="text-gray-600 text-sm">Descripcion</p>
+    </div>
+    <div class="bg-gray-100 rounded-md p-4 w-1/3">
+      <img src="ruta/a/foto2.jpg" alt="Foto 2" class="w-full h-auto rounded-md mb-2">
+      <h3 class="font-semibold text-lg mb-1">espacio 2</h3>
+      <p class="text-gray-600 text-sm">Descripcion</p>
+    </div>
+    <div class="bg-gray-100 rounded-md p-4 w-1/3">
+      <img src="ruta/a/foto3.jpg" alt="Foto 3" class="w-full h-auto rounded-md mb-2">
+      <h3 class="font-semibold text-lg mb-1">espacio 3</h3>
+      <p class="text-gray-600 text-sm">Descripcion</p>
+    </div>
+    </div>
+    <div class="mt-6">
+      <button class="bg-bubble-gum text-white font-bold py-2 px-4 rounded hover:bg-blue-400 transition duration-300 mb-9">Ver más servicios</button>
+  </section>
+</body>
+</html>
