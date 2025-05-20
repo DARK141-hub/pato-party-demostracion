@@ -118,38 +118,50 @@
     Organizamos fiestas inolvidables para niños, llenas de diversión para todas las edades.
   </p>
   
-  <div class="flex flex-wrap flex-container justify-center gap-4">
+<div class="flex flex-wrap flex-container justify-center gap-4">
+
     <div class="bg-gray-100 rounded-md p-4 w-full md:w-1/3 service-item">
-      <img src="4.jpg" alt="Decoraciones" class="w-full h-auto rounded-md mb-2">
+      <div class="w-full aspect-[4/3] overflow-hidden rounded-md">
+        <img src="4.jpg" alt="Decoraciones" class="w-full h-full object-cover rounded-md mb-2">
+      </div>
       <h3 class="font-semibold text-lg mb-1">Decoraciones</h3>
       <p class="text-gray-600 text-sm">Decoraciones temáticas para todo tipo de fiestas.</p>
     </div>
+
     <div class="bg-gray-100 rounded-md p-4 w-full md:w-1/3 service-item">
-      <img src="14.jpg" alt="Shows" class="w-full h-auto rounded-md mb-2">
+      <div class="w-full aspect-[4/3] overflow-hidden rounded-md">
+        <img src="14.jpg" alt="Shows" class="w-full h-full object-cover rounded-md mb-2">
+      </div>
       <h3 class="font-semibold text-lg mb-1">Shows</h3>
       <p class="text-gray-600 text-sm">Shows interactivos y animaciones para todas las edades.</p>
     </div>
-    <div class="b-gray-100 rounded-md p-4 w-full md:w-1/3 service-item">
-      <img src="12.jpg" alt="Catering" class="w-full h-auto rounded-md mb-2">
+
+    <div class="bg-gray-100 rounded-md p-4 w-full md:w-1/3 service-item">
+      <div class="w-full aspect-[4/3] overflow-hidden rounded-md">
+        <img src="12.jpg" alt="Catering" class="w-full h-full object-cover rounded-md mb-2">
+      </div>
       <h3 class="font-semibold text-lg mb-1">Catering</h3>
       <p class="text-gray-600 text-sm">Servicio de comida y bebida personalizado para cada evento.</p>
     </div>
-    <div class="bg-gray-100 rounded-md p-4 w-full md:w-1/3 service-item mt-4">
-      <img src="13.jpg" alt="Fotografía" class="w-full h-auto rounded-md mb-2">
+
+    <div class="bg-gray-100 rounded-md p-4 w-full md:w-1/3 service-item">
+      <div class="w-full aspect-[4/3] overflow-hidden rounded-md">
+        <img src="13.jpg" alt="Fotografía" class="w-full h-full object-cover rounded-md mb-2">
+      </div>
       <h3 class="font-semibold text-lg mb-1">Fotografía</h3>
       <p class="text-gray-600 text-sm">Capturamos los momentos más especiales de tu celebración.</p>
     </div>
-    <div class="bg-gray-100 rounded-md p-4 w-full md:w-1/3 service-item mt-4">
-      <img src="2.jpg" alt="Música" class="w-full h-auto rounded-md mb-2">
+
+    <div class="bg-gray-100 rounded-md p-4 w-full md:w-1/3 service-item">
+      <div class="w-full aspect-[4/3] overflow-hidden rounded-md">
+        <img src="2.jpg" alt="Música" class="w-full h-full object-cover rounded-md mb-2">
+      </div>
       <h3 class="font-semibold text-lg mb-1">Música y DJ</h3>
       <p class="text-gray-600 text-sm">Ambientación musical adecuada para cada tipo de evento.</p>
     </div>
-  </div>
+</div>
   
   <div class="mt-6 mb-9">
-    <button class="bg-bubble-gum text-white font-bold py-2 px-4 rounded hover:bg-blue-400 transition duration-300">
-      Ver más servicios
-    </button>
   </div>
 </section>
 
@@ -160,38 +172,92 @@
     Mira algunos de nuestros trabajos anteriores y déjate inspirar para tu próximo evento.
   </p>
   <div class="flex flex-wrap flex-container gap-4 justify-center">
+    <!-- Cada item de la galería -->
     <div class="w-full md:w-1/4 p-2 gallery-item">
-      <img src="1.jpg" alt="Evento 1" class="w-full h-auto rounded-lg shadow-md hover:scale-105 transition-all">
+      <div class="aspect-[4/3] overflow-hidden rounded-lg shadow-md hover:scale-105 transition-all cursor-pointer" onclick="openModal('1.jpg', 'Evento 1')">
+        <img src="1.jpg" alt="Evento 1" class="w-full h-full object-cover">
+      </div>
     </div>
     <div class="w-full md:w-1/4 p-2 gallery-item">
-      <img src="2.jpg" alt="Evento 2" class="w-full h-auto rounded-lg shadow-md hover:scale-105 transition-all">
+      <div class="aspect-[4/3] overflow-hidden rounded-lg shadow-md hover:scale-105 transition-all cursor-pointer" onclick="openModal('2.jpg', 'Evento 2')">
+        <img src="2.jpg" alt="Evento 2" class="w-full h-full object-cover">
+      </div>
     </div>
     <div class="w-full md:w-1/4 p-2 gallery-item">
-      <img src="3.jpg" alt="Evento 3" class="w-full h-auto rounded-lg shadow-md hover:scale-105 transition-all">
+      <div class="aspect-[4/3] overflow-hidden rounded-lg shadow-md hover:scale-105 transition-all cursor-pointer" onclick="openModal('3.jpg', 'Evento 3')">
+        <img src="3.jpg" alt="Evento 3" class="w-full h-full object-cover">
+      </div>
     </div>
     <div class="w-full md:w-1/4 p-2 gallery-item">
-      <img src="4.jpg" alt="Evento 4" class="w-full h-auto rounded-lg shadow-md hover:scale-105 transition-all">
+      <div class="aspect-[4/3] overflow-hidden rounded-lg shadow-md hover:scale-105 transition-all cursor-pointer" onclick="openModal('4.jpg', 'Evento 4')">
+        <img src="4.jpg" alt="Evento 4" class="w-full h-full object-cover">
+      </div>
     </div>
     <div class="w-full md:w-1/4 p-2 gallery-item">
-      <img src="5.jpg" alt="Evento 5" class="w-full h-auto rounded-lg shadow-md hover:scale-105 transition-all">
+      <div class="aspect-[4/3] overflow-hidden rounded-lg shadow-md hover:scale-105 transition-all cursor-pointer" onclick="openModal('5.jpg', 'Evento 5')">
+        <img src="5.jpg" alt="Evento 5" class="w-full h-full object-cover">
+      </div>
     </div>
     <div class="w-full md:w-1/4 p-2 gallery-item">
-      <img src="6.jpg" alt="Evento 6" class="w-full h-auto rounded-lg shadow-md hover:scale-105 transition-all">
+      <div class="aspect-[4/3] overflow-hidden rounded-lg shadow-md hover:scale-105 transition-all cursor-pointer" onclick="openModal('6.jpg', 'Evento 6')">
+        <img src="6.jpg" alt="Evento 6" class="w-full h-full object-cover">
+      </div>
     </div>
     <div class="w-full md:w-1/4 p-2 gallery-item">
-      <img src="7.jpg" alt="Evento 7" class="w-full h-auto rounded-lg shadow-md hover:scale-105 transition-all">
+      <div class="aspect-[4/3] overflow-hidden rounded-lg shadow-md hover:scale-105 transition-all cursor-pointer" onclick="openModal('7.jpg', 'Evento 7')">
+        <img src="7.jpg" alt="Evento 7" class="w-full h-full object-cover">
+      </div>
     </div>
     <div class="w-full md:w-1/4 p-2 gallery-item">
-      <img src="8.jpg" alt="Evento 8" class="w-full h-auto rounded-lg shadow-md hover:scale-105 transition-all">
+      <div class="aspect-[4/3] overflow-hidden rounded-lg shadow-md hover:scale-105 transition-all cursor-pointer" onclick="openModal('8.jpg', 'Evento 8')">
+        <img src="8.jpg" alt="Evento 8" class="w-full h-full object-cover">
+      </div>
     </div>
   </div>
-  
-  <div class="mt-6 mb-4">
-    <button class="bg-bubble-gum text-white font-bold py-2 px-4 rounded hover:bg-blue-400 transition duration-300">
-      Ver galería completa
-    </button>
+
+  <!-- Modal -->
+  <div id="imageModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-75 p-4">
+    <div class="relative max-w-4xl w-full">
+      <span class="absolute -top-10 right-0 text-white text-3xl cursor-pointer" onclick="closeModal()">&times;</span>
+      <div class="bg-white p-2 rounded-lg">
+        <img id="modalImage" class="w-full max-h-[80vh] object-contain" src="" alt="">
+        <p id="modalCaption" class="text-center mt-2 text-gray-700 font-medium"></p>
+      </div>
+    </div>
   </div>
+
+  <div class="mt-6 mb-4"></div>
 </section>
+
+<script>
+  function openModal(src, alt) {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const captionText = document.getElementById('modalCaption');
+    
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    modalImg.src = src;
+    captionText.textContent = alt;
+    
+    document.body.style.overflow = 'hidden'; // Previene el scroll
+  }
+
+  function closeModal() {
+    const modal = document.getElementById('imageModal');
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    document.body.style.overflow = 'auto'; // Restaura el scroll
+  }
+
+  // Cerrar al hacer clic fuera de la imagen
+  window.onclick = function(event) {
+    const modal = document.getElementById('imageModal');
+    if (event.target == modal) {
+      closeModal();
+    }
+  }
+</script>
 
 <!-- SECCIÓN 4: EVENTOS -->
 <section id="eventos" class="bg-blush rounded-3xl shadow-lg p-6 mt-10 max-w-5xl mx-auto">
@@ -201,38 +267,58 @@
   </p>
   
   <div class="flex flex-wrap flex-container gap-6 justify-center">
-    <div class="bg-white rounded-xl p-5 w-full md:w-1/4 shadow-md event-item">
-      <img src="6.jpg" alt="Bodas" class="w-full h-auto rounded-md mb-3">
+    <div class="bg-white rounded-xl p-5 w-full md:w-1/4 shadow-md event-item flex flex-col">
+      <div class="aspect-[4/3] overflow-hidden rounded-md mb-3">
+        <img src="6.jpg" alt="Bodas" class="w-full h-full object-cover">
+      </div>
       <h3 class="font-bold text-xl text-bubble-gum">Bodas</h3>
       <p class="text-gray-600 mt-2">Decoraciones elegantes y servicios completos para tu día especial.</p>
     </div>
-    <div class="bg-white rounded-xl p-5 w-full md:w-1/4 shadow-md event-item">
-      <img src="7.jpg" alt="Cumpleaños" class="w-full h-auto rounded-md mb-3">
+    
+    <div class="bg-white rounded-xl p-5 w-full md:w-1/4 shadow-md event-item flex flex-col">
+      <div class="aspect-[4/3] overflow-hidden rounded-md mb-3">
+        <img src="7.jpg" alt="Cumpleaños" class="w-full h-full object-cover">
+      </div>
       <h3 class="font-bold text-xl text-bubble-gum">Cumpleaños</h3>
       <p class="text-gray-600 mt-2">Desde fiestas infantiles hasta celebraciones de adultos con temáticas personalizadas.</p>
     </div>
-    <div class="bg-white rounded-xl p-5 w-full md:w-1/4 shadow-md event-item">
-      <img src="8.jpg" alt="Baby Showers" class="w-full h-auto rounded-md mb-3">
+    
+    <div class="bg-white rounded-xl p-5 w-full md:w-1/4 shadow-md event-item flex flex-col">
+      <div class="aspect-[4/3] overflow-hidden rounded-md mb-3">
+        <img src="8.jpg" alt="Baby Showers" class="w-full h-full object-cover">
+      </div>
       <h3 class="font-bold text-xl text-bubble-gum">Baby Showers</h3>
       <p class="text-gray-600 mt-2">Decoraciones tiernas y servicios completos para recibir a tu bebé.</p>
     </div>
-    <div class="bg-white rounded-xl p-5 w-full md:w-1/4 shadow-md event-item mt-4 md:mt-0">
-      <img src="9.jpg" alt="Corporativos" class="w-full h-auto rounded-md mb-3">
+    
+    <div class="bg-white rounded-xl p-5 w-full md:w-1/4 shadow-md event-item flex flex-col mt-4 md:mt-0">
+      <div class="aspect-[4/3] overflow-hidden rounded-md mb-3">
+        <img src="9.jpg" alt="Corporativos" class="w-full h-full object-cover">
+      </div>
       <h3 class="font-bold text-xl text-bubble-gum">Corporativos</h3>
       <p class="text-gray-600 mt-2">Eventos empresariales, lanzamientos y celebraciones para tu equipo de trabajo.</p>
     </div>
-    <div class="bg-white rounded-xl p-5 w-full md:w-1/4 shadow-md event-item mt-4">
-      <img src="10.jpg" alt="Graduaciones" class="w-full h-auto rounded-md mb-3">
+    
+    <div class="bg-white rounded-xl p-5 w-full md:w-1/4 shadow-md event-item flex flex-col mt-4">
+      <div class="aspect-[4/3] overflow-hidden rounded-md mb-3">
+        <img src="10.jpg" alt="Graduaciones" class="w-full h-full object-cover">
+      </div>
       <h3 class="font-bold text-xl text-bubble-gum">Graduaciones</h3>
       <p class="text-gray-600 mt-2">Celebra este importante logro con una decoración espectacular.</p>
     </div>
-    <div class="bg-white rounded-xl p-5 w-full md:w-1/4 shadow-md event-item mt-4">
-      <img src="11.jpg" alt="Aniversarios" class="w-full h-auto rounded-md mb-3">
+    
+    <div class="bg-white rounded-xl p-5 w-full md:w-1/4 shadow-md event-item flex flex-col mt-4">
+      <div class="aspect-[4/3] overflow-hidden rounded-md mb-3">
+        <img src="11.jpg" alt="Aniversarios" class="w-full h-full object-cover">
+      </div>
       <h3 class="font-bold text-xl text-bubble-gum">Aniversarios</h3>
       <p class="text-gray-600 mt-2">Conmemora esos momentos especiales con una celebración inolvidable.</p>
     </div>
-    <div class="bg-white rounded-xl p-5 w-full md:w-1/4 shadow-md event-item mt-4">
-      <img src="12.jpg" alt="Otros Eventos" class="w-full h-auto rounded-md mb-3">
+    
+    <div class="bg-white rounded-xl p-5 w-full md:w-1/4 shadow-md event-item flex flex-col mt-4">
+      <div class="aspect-[4/3] overflow-hidden rounded-md mb-3">
+        <img src="12.jpg" alt="Otros Eventos" class="w-full h-full object-cover">
+      </div>
       <h3 class="font-bold text-xl text-bubble-gum">Otros Eventos</h3>
       <p class="text-gray-600 mt-2">Organizamos cualquier tipo de evento que imagines, ¡consúltanos!</p>
     </div>
@@ -456,7 +542,7 @@
   
   <div class="mt-8 text-center">
     <button class="bg-bubble-gum text-white font-bold py-2 px-6 rounded-lg hover:bg-blue-400 transition duration-300">
-      Ver más testimonios
+      Escribir un testimonio
     </button>
   </div>
 </section>
