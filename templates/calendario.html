@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Calendario y agenda</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="#">
+        <link rel="icon" type="image/png" href="logo.png" />
+          <script src="https://cdn.tailwindcss.com"></script>
+            <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'sea-spray': '#BAD6DA',
+            'baby-blue': '#E1F2F4',
+            'matcha': '#DDDD7B',
+            'sunshine': '#FFE797',
+            'bubble-gum': '#f691a9',
+            'blush': '#FFDBDF',
+          },
+        },
+      },
+    }
+  </script>
+    <style>
+    /* Estilos adicionales para el responsive */
+    @media (max-width: 768px) {
+      .flex-container {
+        flex-direction: column;
+      }
+      .service-item, .gallery-item, .event-item, .testimonial-item {
+        width: 100% !important;
+        margin-bottom: 1rem;
+      }
+      .mobile-menu {
+        display: flex;
+      }
+      .desktop-menu {
+        display: none;
+      }
+    }
+    @media (min-width: 769px) {
+      .mobile-menu {
+        display: none;
+      }
+      .desktop-menu {
+        display: flex;
+      }
+    }
+  </style>
+        
+    </head>
+    <body class="bg-[url('background-conffeti.png')] bg-repeat bg-[size:700px] min-h-screen bg-sunshine text-center p-4 md:p-10 ">
+
+        <h1 class="text-3xl font-bold text-center mt-10 text-pink-900 hover:text-pink-500 cursor-pointer">
+            Calendario y agenda
+        </h1>
+
+        <div class="flex justify-center mt-12">
+            <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-md">
+                <div class="flex justify-between items-center mb-4">
+                    <button class="text-pink-700 hover:text-pink-500 font-bold text-xl" id="prevMonth">&lt;</button>
+                    <h2 class="text-xl font-semibold bg-blush p-2 rounded-2xl text-pink-900" id="monthYear"></h2>
+                    <button class="text-pink-700 hover:text-pink-500 font-bold text-xl" id="nextMonth">&gt;</button>
+                </div>
+                <table class="w-full text-center">
+                    <thead>
+                        <tr>
+                            <th class="py-1 bg-baby-blue">Dom</th>
+                            <th class="py-1 ">Lun</th>
+                            <th class="py-1 bg-baby-blue">Mar</th>
+                            <th class="py-1 ">Mié</th>
+                            <th class="py-1 bg-baby-blue">Jue</th>
+                            <th class="py-1 ">Vie</th>
+                            <th class="py-1 bg-baby-blue">Sáb</th>
+                        </tr>
+                    </thead>
+                    <tbody id="calendarBody"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="selectedDateMsg" class="mt-4 text-lg text-green-700 font-semibold"></div>
+
+        <button
+            id="confirmDateBtn"
+            class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-3xl mt-6 mx-auto block"
+            style="display:none;">
+            Confirmar fecha seleccionada
+        </button>
+
+        <script>
+            const monthNames = [
+                "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+                "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+            ];
+            let today = new Date();
+            let currentMonth = today.getMonth();
+            let currentYear = today.getFullYear();
+            let selectedDate = null;
+
+            function renderCalendar(month, year) {
+                const firstDay = new Date(year, month, 1).getDay();
+                const daysInMonth = new Date(year, month + 1, 0).getDate();
+                const calendarBody = document.getElementById("calendarBody");
+                document.getElementById("monthYear").textContent = `${monthNames[month]} ${year}`;
+                calendarBody.innerHTML = "";
+                let date = 1;
+                for (let i = 0; i < 6; i++) {
+                    let row = document.createElement("tr");
+                    for (let j = 0; j < 7; j++) {
+                        let cell = document.createElement("td");
+                        cell.className = "py-2 cursor-pointer";
+                        if (i === 0 && j < firstDay) {
+                            cell.textContent = "";
+                        } else if (date > daysInMonth) {
+                            cell.textContent = "";
+                        } else {
+                            cell.textContent = date;
+                            cell.dataset.date = `${year}-${String(month + 1).padStart(2, '0')}-${String(date).padStart(2, '0')}`;
+                            if (
+                                date === today.getDate() &&
+                                year === today.getFullYear() &&
+                                month === today.getMonth()
+                            ) {
+                                cell.className += " bg-blush rounded-full font-bold";
+                            }
+                            if (
+                                selectedDate &&
+                                selectedDate.year === year &&
+                                selectedDate.month === month &&
+                                selectedDate.day === date
+                            ) {
+                                cell.className += " bg-pink-300 text-white rounded-full font-bold";
+                            }
+                            cell.onclick = function () {
+                                selectedDate = { year, month, day: date };
+                                document.getElementById("selectedDateMsg").textContent =
+                                    `Fecha seleccionada: ${date} de ${monthNames[month]} de ${year}`;
+                                document.getElementById("confirmDateBtn").style.display = "block";
+                                renderCalendar(currentMonth, currentYear);
+                            };
+                            date++;
+                        }
+                        row.appendChild(cell);
+                    }
+                    calendarBody.appendChild(row);
+                    if (date > daysInMonth) break;
+                }
+            }
+
+            document.getElementById("prevMonth").onclick = function () {
+                currentMonth--;
+                if (currentMonth < 0) {
+                    currentMonth = 11;
+                    currentYear--;
+                }
+                renderCalendar(currentMonth, currentYear);
+            };
+
+            document.getElementById("nextMonth").onclick = function () {
+                currentMonth++;
+                if (currentMonth > 11) {
+                    currentMonth = 0;
+                    currentYear++;
+                }
+                renderCalendar(currentMonth, currentYear);
+            };
+
+            document.getElementById("confirmDateBtn").onclick = function () {
+                if (selectedDate) {
+                    alert(`¡Fecha confirmada: ${selectedDate.day} de ${monthNames[selectedDate.month]} de ${selectedDate.year}!`);
+                }
+            };
+
+            renderCalendar(currentMonth, currentYear);
+        </script>
+
+        <button
+            class="bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded-3xl mt-6 mx-auto block"
+            onclick="alert('¡Hola! Esta es una alerta de prueba.')">
+            Solicitar una cita
+        </button>
+
+        <script src="" async defer></script>
+    </body>
+</html>
