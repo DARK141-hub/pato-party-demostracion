@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Testimonios</title>
+  <link rel="icon" type="image/png" href="logo.png" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+      background-image: url('background-conffeti.png');
+    }
+    .comentario-form, .comentario 
+    {
+      background-color: #f9f9f9;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    input, textarea {
+      width: 100%;
+      border: 1px solid #ccc;
+        padding :5px 0;
+      margin: 10px 0;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #F851A6;
+      color: white;
+      padding: 0.6rem 1.5rem;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;;
+    }
+    button:hover {
+      background-color: #c92b7d;
+      transition: 1;
+
+    }
+
+    h1 {
+      text-align: center;
+      color: #F851A6;
+      cursor: pointer;
+    }
+    h1:hover {
+      color: #c92b7d;
+      transition: 0.5s;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Deja tu Testimonio</h1>
+
+  <div class="comentario-form">
+    <input type="text" id="nombre" placeholder="Tu nombre">
+    <textarea id="mensaje" placeholder="Escribe tu Testimonio..."></textarea>
+    <center><button onclick="enviarComentario()">Enviar</button>
+  </div>
+
+  <div id="lista-comentarios"></div>
+
+
+
+  
+  <script>
+    async function cargarComentarios() {
+      const res = await fetch('http://localhost:5000/api/comentarios');
+      const datos = await res.json();
+      const contenedor = document.getElementById('lista-comentarios');
+      contenedor.innerHTML = '';
+      datos.forEach(c => {
+        const div = document.createElement('div');
+        div.className = 'comentario';
+        div.innerHTML = `<strong>${c.nombre}</strong><p>${c.mensaje}</p>`;
+        contenedor.appendChild(div);
+      });
+    }
+
+    async function enviarComentario() {
+      const nombre = document.getElementById('nombre').value;
+      const mensaje = document.getElementById('mensaje').value;
+
+      const res = await fetch('http://localhost:5000/api/comentarios', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ nombre, mensaje })
+      });
+
+      if (res.ok) {
+        document.getElementById('nombre').value = '';
+        document.getElementById('mensaje').value = '';
+        cargarComentarios();
+      } else {
+        alert('Error al enviar el Testimonio <(＿　＿)>');
+      }
+    }
+
+    // Cargar comentarios al inicio
+    cargarComentarios();
+  </script>
+
+</body>
+</html>
