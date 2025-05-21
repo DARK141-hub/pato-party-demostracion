@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pato Party</title>
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link href="styles.css" rel="stylesheet" />
+  <script src="app.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'sea-spray': '#BAD6DA',
+            'baby-blue': '#E1F2F4',
+            'matcha': '#DDDD7B',
+            'sunshine': '#FFE797',
+            'bubble-gum': '#f691a9',
+            'blush': '#FFDBDF',
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    /* Estilos adicionales para el responsive */
+    @media (max-width: 768px) {
+      .flex-container {
+        flex-direction: column;
+      }
+      .service-item, .gallery-item, .event-item, .testimonial-item {
+        width: 100% !important;
+        margin-bottom: 1rem;
+      }
+      .mobile-menu {
+        display: flex;
+      }
+      .desktop-menu {
+        display: none;
+      }
+    }
+    @media (min-width: 769px) {
+      .mobile-menu {
+        display: none;
+      }
+      .desktop-menu {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-[url('background-conffeti.png')] bg-repeat bg-[size:700px] min-h-screen bg-sunshine text-center p-4 md:p-10 "></body>
+<header class="fixed top-0 left-0 w-full bg-white bg-opacity-80 flex justify-between items-center px-4 md:px-8 py-4 z-50 shadow-md">
+  <div class="flex items-center space-x-4">
+    <img src="logo.jpg" alt="Logo Pato Party" class="h-16 w-16 rounded-full shadow-md" />
+    <span class="text-3xl font-bold text-blue-700">Pato Party</span>
+  </div>
+  
+  <nav class="desktop-menu">
+    <ul class="flex space-x-4 md:space-x-8">
+      <li><a href="#nosotros" class="text-bubble-gum hover:text-blue-400 transition font-bold">Nosotros</a></li>
+      <li><a href="#servicios" class="text-bubble-gum hover:text-blue-400 transition font-bold">Servicios</a></li>
+      <li><a href="#galeria" class="text-bubble-gum hover:text-blue-400 transition font-bold">Galería</a></li>
+      <li><a href="#eventos" class="text-bubble-gum hover:text-blue-400 transition font-bold">Eventos</a></li>
+      <li><a href="#contacto" class="text-bubble-gum hover:text-blue-400 transition font-bold">Contacto</a></li>
+      <li><a href="#faq" class="text-bubble-gum hover:text-blue-400 transition font-bold">FAQ</a></li>
+      <li><a href="#testimonios" class="text-bubble-gum hover:text-blue-400 transition font-bold">Testimonios</a></li>
+    </ul>
+  </nav>
+  
+  <div class="mobile-menu flex flex-col lg:hidden relative">
+    <button id="menu-toggle" class="text-bubble-gum">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+    <div id="mobile-nav" class="hidden absolute top-16 right-0 bg-white p-6 shadow-2xl rounded-2xl w-64 z-50">
+      <ul class="flex flex-col space-y-4">
+        <li><a href="#nosotros" class="text-bubble-gum hover:text-blue-400 transition font-bold text-lg">Nosotros</a></li>
+        <li><a href="#servicios" class="text-bubble-gum hover:text-blue-400 transition font-bold text-lg">Servicios</a></li>
+        <li><a href="#galeria" class="text-bubble-gum hover:text-blue-400 transition font-bold text-lg">Galería</a></li>
+        <li><a href="#eventos" class="text-bubble-gum hover:text-blue-400 transition font-bold text-lg">Eventos</a></li>
+        <li><a href="#contacto" class="text-bubble-gum hover:text-blue-400 transition font-bold text-lg">Contacto</a></li>
+        <li><a href="#faq" class="text-bubble-gum hover:text-blue-400 transition font-bold text-lg">FAQ</a></li>
+        <li><a href="#testimonios" class="text-bubble-gum hover:text-blue-400 transition font-bold text-lg">Testimonios</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<div class="h-24"></div>
+
+<!-- SECCIÓN 1: NOSOTROS (antes era Inicio) -->
+<section id="nosotros" class="py-8 bg-blush rounded-3xl shadow-lg p-6 mt-10 max-w-5xl mx-auto text-center ">
+  <h1 class="text-4xl md:text-5xl font-bold text-pink-600 hover:scale-105 transition-all duration-300 cursor-pointer">
+    <br>BIENVENIDO A <BR> PATO PARTY!!!
+  </h1>
+  <p class="text-2xl md:text-4xl font-bold text-pink-600 mt-5 hover:scale-105 transition-all duration-300 cursor-pointer">
+    Ven y conoce todos nuestros servicios
+  </p>
+  <p class="text-lg max-w-2xl mx-auto mt-4 text-gray-700">
+    Somos una empresa dedicada a hacer de tus eventos una experiencia mágica e inolvidable. 
+    Nos especializamos en decoración y organización de fiestas.
+  </p>
+  <button onclick="window.location.href='calendario.html'" class="bg-pink-600 text-2xl text-white font-bold mt-7 rounded-2xl px-8 py-2 border-blue-900 hover:scale-105 hover:bg-white transition-all duration-300 hover:text-pink-400">
+    AGENDAR CITA
+  </button>
+</section>
+
+<!-- SECCIÓN 2: SERVICIOS -->
+<section id="servicios" class="bg-white rounded-3xl shadow-lg p-6 mt-10 max-w-5xl mx-auto">
+  <h2 class="text-3xl font-bold text-bubble-gum mb-4 mt-9">Nuestros Servicios</h2>
+  <p class="text-gray-500 font-bold mb-9">
+    En Pato Party, ofrecemos una variedad de servicios para hacer de tu fiesta un evento inolvidable.
+    Organizamos fiestas inolvidables para niños, llenas de diversión para todas las edades.
+  </p>
+  
+<div class="flex flex-wrap flex-container justify-center gap-4">
+
+    <div class="bg-gray-100 rounded-md p-4 w-full md:w-1/3 service-item">
+      <div class="w-full aspect-[4/3] overflow-hidden rounded-md">
+        <img src="4.jpg" alt="Decoraciones" class="w-full h-full object-cover rounded-md mb-2">
+      </div>
+      <h3 class="font-semibold text-lg mb-1">Decoraciones</h3>
+      <p class="text-gray-600 text-sm">Decoraciones temáticas para todo tipo de fiestas.</p>
+    </div>
+
+    <div class="bg-gray-100 rounded-md p-4 w-full md:w-1/3 service-item">
+      <div class="w-full aspect-[4/3] overflow-hidden rounded-md">
+        <img src="14.jpg" alt="Shows" class="w-full h-full object-cover rounded-md mb-2">
+      </div>
+      <h3 class="font-semibold text-lg mb-1">Shows</h3>
+      <p class="text-gray-600 text-sm">Shows interactivos y animaciones para todas las edades.</p>
+    </div>
+
+    <div class="bg-gray-100 rounded-md p-4 w-full md:w-1/3 service-item">
+      <div class="w-full aspect-[4/3] overflow-hidden rounded-md">
+        <img src="12.jpg" alt="Catering" class="w-full h-full object-cover rounded-md mb-2">
+      </div>
+      <h3 class="font-semibold text-lg mb-1">Catering</h3>
+      <p class="text-gray-600 text-sm">Servicio de comida y bebida personalizado para cada evento.</p>
+    </div>
+
+    <div class="bg-gray-100 rounded-md p-4 w-full md:w-1/3 service-item">
+      <div class="w-full aspect-[4/3] overflow-hidden rounded-md">
+        <img src="13.jpg" alt="Fotografía" class="w-full h-full object-cover rounded-md mb-2">
+      </div>
+      <h3 class="font-semibold text-lg mb-1">Fotografía</h3>
+      <p class="text-gray-600 text-sm">Capturamos los momentos más especiales de tu celebración.</p>
+    </div>
+
+    <div class="bg-gray-100 rounded-md p-4 w-full md:w-1/3 service-item">
+      <div class="w-full aspect-[4/3] overflow-hidden rounded-md">
+        <img src="2.jpg" alt="Música" class="w-full h-full object-cover rounded-md mb-2">
+      </div>
+      <h3 class="font-semibold text-lg mb-1">Música y DJ</h3>
+      <p class="text-gray-600 text-sm">Ambientación musical adecuada para cada tipo de evento.</p>
+    </div>
+</div>
+  
+  <div class="mt-6 mb-9">
+  </div>
+</section>
+
+<!-- SECCIÓN 3: GALERÍA -->
+<section id="galeria" class="bg-baby-blue rounded-3xl shadow-lg p-6 mt-10 max-w-5xl mx-auto">
+  <h2 class="text-3xl font-bold text-bubble-gum mb-4 mt-6">Galería de Eventos</h2>
+  <p class="text-gray-500 font-bold mb-6">
+    Mira algunos de nuestros trabajos anteriores y déjate inspirar para tu próximo evento.
+  </p>
+  <div class="flex flex-wrap flex-container gap-4 justify-center">
+    <!-- Cada item de la galería -->
+    <div class="w-full md:w-1/4 p-2 gallery-item">
+      <div class="aspect-[4/3] overflow-hidden rounded-lg shadow-md hover:scale-105 transition-all cursor-pointer" onclick="openModal('/static/1.jpg', 'Evento 1')">
+        <img src="1.jpg" alt="Evento 1" class="w-full h-full object-cover">
+      </div>
+    </div>
+    <div class="w-full md:w-1/4 p-2 gallery-item">
+      <div class="aspect-[4/3] overflow-hidden rounded-lg shadow-md hover:scale-105 transition-all cursor-pointer" onclick="openModal('/static/2.jpg', 'Evento 2')">
+        <img src="2.jpg" alt="Evento 2" class="w-full h-full object-cover">
+      </div>
+    </div>
+    <div class="w-full md:w-1/4 p-2 gallery-item">
+      <div class="aspect-[4/3] overflow-hidden rounded-lg shadow-md hover:scale-105 transition-all cursor-pointer" onclick="openModal('/static/3.jpg', 'Evento 3')">
+        <img src="3.jpg" alt="Evento 3" class="w-full h-full object-cover">
+      </div>
+    </div>
+    <div class="w-full md:w-1/4 p-2 gallery-item">
+      <div class="aspect-[4/3] overflow-hidden rounded-lg shadow-md hover:scale-105 transition-all cursor-pointer" onclick="openModal('/static/4.jpg', 'Evento 4')">
+        <img src="4.jpg" alt="Evento 4" class="w-full h-full object-cover">
+      </div>
+    </div>
+    <div class="w-full md:w-1/4 p-2 gallery-item">
+      <div class="aspect-[4/3] overflow-hidden rounded-lg shadow-md hover:scale-105 transition-all cursor-pointer" onclick="openModal('/static/5.jpg', 'Evento 5')">
+        <img src="5.jpg" alt="Evento 5" class="w-full h-full object-cover">
+      </div>
+    </div>
+    <div class="w-full md:w-1/4 p-2 gallery-item">
+      <div class="aspect-[4/3] overflow-hidden rounded-lg shadow-md hover:scale-105 transition-all cursor-pointer" onclick="openModal('/static/6.jpg', 'Evento 6')">
+        <img src="6.jpg" alt="Evento 6" class="w-full h-full object-cover">
+      </div>
+    </div>
+    <div class="w-full md:w-1/4 p-2 gallery-item">
+      <div class="aspect-[4/3] overflow-hidden rounded-lg shadow-md hover:scale-105 transition-all cursor-pointer" onclick="openModal('/static/7.jpg', 'Evento 7')">
+        <img src="7.jpg" alt="Evento 7" class="w-full h-full object-cover">
+      </div>
+    </div>
+    <div class="w-full md:w-1/4 p-2 gallery-item">
+      <div class="aspect-[4/3] overflow-hidden rounded-lg shadow-md hover:scale-105 transition-all cursor-pointer" onclick="openModal('/static/8.jpg', 'Evento 8')">
+        <img src="8.jpg" alt="Evento 8" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="imageModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-75 p-4">
+    <div class="relative max-w-4xl w-full">
+      <span class="absolute -top-10 right-0 text-white text-3xl cursor-pointer" onclick="closeModal()">&times;</span>
+      <div class="bg-white p-2 rounded-lg">
+        <img id="modalImage" class="w-full max-h-[80vh] object-contain" src="" alt="">
+        <p id="modalCaption" class="text-center mt-2 text-gray-700 font-medium"></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-6 mb-4"></div>
+</section>
+
+<script>
+  function openModal(src, alt) {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const captionText = document.getElementById('modalCaption');
+    
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    modalImg.src = src;
+    captionText.textContent = alt;
+    
+    document.body.style.overflow = 'hidden'; // Previene el scroll
+  }
+
+  function closeModal() {
+    const modal = document.getElementById('imageModal');
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    document.body.style.overflow = 'auto'; // Restaura el scroll
+  }
+
+  // Cerrar al hacer clic fuera de la imagen
+  window.onclick = function(event) {
+    const modal = document.getElementById('imageModal');
+    if (event.target == modal) {
+      closeModal();
+    }
+  }
+</script>
+
+<!-- SECCIÓN 4: EVENTOS -->
+<section id="eventos" class="bg-blush rounded-3xl shadow-lg p-6 mt-10 max-w-5xl mx-auto">
+  <h2 class="text-3xl font-bold text-bubble-gum mb-4 mt-6">Tipos de Eventos</h2>
+  <p class="text-gray-500 font-bold mb-6">
+    Nos especializamos en una amplia variedad de celebraciones. ¡Deja que hagamos de tu evento algo especial!
+  </p>
+  
+  <div class="flex flex-wrap flex-container gap-6 justify-center">
+    <div class="bg-white rounded-xl p-5 w-full md:w-1/4 shadow-md event-item flex flex-col">
+      <div class="aspect-[4/3] overflow-hidden rounded-md mb-3">
+        <img src="6.jpg" alt="Bodas" class="w-full h-full object-cover">
+      </div>
+      <h3 class="font-bold text-xl text-bubble-gum">Bodas</h3>
+      <p class="text-gray-600 mt-2">Decoraciones elegantes y servicios completos para tu día especial.</p>
+    </div>
+    
+    <div class="bg-white rounded-xl p-5 w-full md:w-1/4 shadow-md event-item flex flex-col">
+      <div class="aspect-[4/3] overflow-hidden rounded-md mb-3">
+        <img src="7.jpg" alt="Cumpleaños" class="w-full h-full object-cover">
+      </div>
+      <h3 class="font-bold text-xl text-bubble-gum">Cumpleaños</h3>
+      <p class="text-gray-600 mt-2">Desde fiestas infantiles hasta celebraciones de adultos con temáticas personalizadas.</p>
+    </div>
+    
+    <div class="bg-white rounded-xl p-5 w-full md:w-1/4 shadow-md event-item flex flex-col">
+      <div class="aspect-[4/3] overflow-hidden rounded-md mb-3">
+        <img src="8.jpg" alt="Baby Showers" class="w-full h-full object-cover">
+      </div>
+      <h3 class="font-bold text-xl text-bubble-gum">Baby Showers</h3>
+      <p class="text-gray-600 mt-2">Decoraciones tiernas y servicios completos para recibir a tu bebé.</p>
+    </div>
+    
+    <div class="bg-white rounded-xl p-5 w-full md:w-1/4 shadow-md event-item flex flex-col mt-4 md:mt-0">
+      <div class="aspect-[4/3] overflow-hidden rounded-md mb-3">
+        <img src="9.jpg" alt="Corporativos" class="w-full h-full object-cover">
+      </div>
+      <h3 class="font-bold text-xl text-bubble-gum">Corporativos</h3>
+      <p class="text-gray-600 mt-2">Eventos empresariales, lanzamientos y celebraciones para tu equipo de trabajo.</p>
+    </div>
+    
+    <div class="bg-white rounded-xl p-5 w-full md:w-1/4 shadow-md event-item flex flex-col mt-4">
+      <div class="aspect-[4/3] overflow-hidden rounded-md mb-3">
+        <img src="10.jpg" alt="Graduaciones" class="w-full h-full object-cover">
+      </div>
+      <h3 class="font-bold text-xl text-bubble-gum">Graduaciones</h3>
+      <p class="text-gray-600 mt-2">Celebra este importante logro con una decoración espectacular.</p>
+    </div>
+    
+    <div class="bg-white rounded-xl p-5 w-full md:w-1/4 shadow-md event-item flex flex-col mt-4">
+      <div class="aspect-[4/3] overflow-hidden rounded-md mb-3">
+        <img src="11.jpg" alt="Aniversarios" class="w-full h-full object-cover">
+      </div>
+      <h3 class="font-bold text-xl text-bubble-gum">Aniversarios</h3>
+      <p class="text-gray-600 mt-2">Conmemora esos momentos especiales con una celebración inolvidable.</p>
+    </div>
+    
+    <div class="bg-white rounded-xl p-5 w-full md:w-1/4 shadow-md event-item flex flex-col mt-4">
+      <div class="aspect-[4/3] overflow-hidden rounded-md mb-3">
+        <img src="12.jpg" alt="Otros Eventos" class="w-full h-full object-cover">
+      </div>
+      <h3 class="font-bold text-xl text-bubble-gum">Otros Eventos</h3>
+      <p class="text-gray-600 mt-2">Organizamos cualquier tipo de evento que imagines, ¡consúltanos!</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN 5: CONTACTO -->
+<section id="contacto" class="bg-matcha rounded-3xl shadow-lg p-6 mt-10 max-w-5xl mx-auto">
+  <h2 class="text-3xl font-bold text-bubble-gum mb-4 mt-6">Contacto</h2>
+  <p class="text-gray-700 font-bold mb-6">
+    ¿Listo para hacer tu evento realidad? ¡Contáctanos hoy mismo!
+  </p>
+  
+  <div class="flex flex-container flex-wrap">
+    <div class="w-full md:w-1/2 p-4">
+      <form class="bg-white p-6 rounded-lg shadow-md">
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="nombre">Nombre:</label>
+          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="nombre" type="text" placeholder="Tu nombre">
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="email">Email:</label>
+          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="Tu email">
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="telefono">Teléfono:</label>
+          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="telefono" type="tel" placeholder="Tu teléfono">
+        </div>
+        <div class="mb-6">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="mensaje">Mensaje:</label>
+          <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="mensaje" rows="4" placeholder="Detalles de tu evento"></textarea>
+        </div>
+        <div class="flex items-center justify-center">
+          <button class="bg-bubble-gum hover:bg-blue-400 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300" type="button">
+            Enviar Mensaje
+          </button>
+        </div>
+      </form>
+    </div>
+    
+    <div class="w-full md:w-1/2 p-4">
+      <div class="bg-white p-6 rounded-lg shadow-md h-full">
+        <h3 class="text-xl font-bold text-bubble-gum mb-4">Información de Contacto</h3>
+        <ul class="text-center">
+          <li class="mb-3 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-bubble-gum" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            <span>+123 456 7890</span>
+          </li>
+          <li class="mb-3 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-bubble-gum" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            <span>info@patoparty.com</span>
+          </li>
+          <li class="mb-3 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-bubble-gum" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            </svg>
+          </li>
+        </ul>
+        
+        <h4 class="text-lg font-semibold text-bubble-gum mt-6 mb-3">Horario de Atención</h4>
+        <p class="mb-2">Lunes a Viernes: 9:00 AM - 6:00 PM</p>
+        <p>Sábados: 10:00 AM - 3:00 PM</p>
+        
+        <div class="mt-6">
+          <h4 class="text-lg font-semibold text-bubble-gum mb-3">Síguenos</h4>
+          <div class="flex space-x-4 justify-center">
+            <a href="#" class="text-bubble-gum hover:text-blue-500">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="#" class="text-bubble-gum hover:text-pink-500">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <rect x="2" y="2" width="20" height="20" rx="5"></rect>
+                <circle cx="12" cy="12" r="4"></circle>
+                <circle cx="18" cy="6" r="1"></circle>
+              </svg>
+            </a>
+            <a href="#" class="text-bubble-gum hover:text-blue-400">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN 6: PREGUNTAS FRECUENTES -->
+<section id="faq" class="bg-sea-spray rounded-3xl shadow-lg p-6 mt-10 max-w-5xl mx-auto">
+  <h2 class="text-3xl font-bold text-bubble-gum mb-4 mt-6">Preguntas Frecuentes</h2>
+  <p class="text-gray-700 font-bold mb-6">
+    Resolvemos tus dudas sobre nuestros servicios
+  </p>
+  
+  <div class="space-y-4">
+    <div class="bg-white p-4 rounded-lg shadow-md">
+      <h3 class="font-bold text-lg text-bubble-gum">¿Con cuánta anticipación debo reservar?</h3>
+      <p class="mt-2 text-gray-700">Recomendamos reservar con al menos 3-4 semanas de anticipación para eventos pequeños y 2-3 meses para eventos grandes como bodas.</p>
+    </div>
+    
+    <div class="bg-white p-4 rounded-lg shadow-md">
+      <h3 class="font-bold text-lg text-bubble-gum">¿Realizan eventos fuera de la ciudad?</h3>
+      <p class="mt-2 text-gray-700">¡Sí! Trabajamos tanto en la ciudad como en localidades cercanas. Para destinos más lejanos, podría aplicarse un cargo adicional por traslado.</p>
+    </div>
+    
+    <div class="bg-white p-4 rounded-lg shadow-md">
+      <h3 class="font-bold text-lg text-bubble-gum">¿Qué incluye el servicio de decoración?</h3>
+      <p class="mt-2 text-gray-700">Nuestro servicio de decoración incluye montaje, desmontaje, todos los materiales necesarios y asesoría personalizada para diseñar el concepto perfecto.</p>
+    </div>
+    
+    <div class="bg-white p-4 rounded-lg shadow-md">
+      <h3 class="font-bold text-lg text-bubble-gum">¿Puedo proporcionar mis propias decoraciones?</h3>
+      <p class="mt-2 text-gray-700">Por supuesto. Podemos trabajar con elementos que ya tengas y complementarlos con nuestros servicios para lograr el resultado deseado.</p>
+    </div>
+    
+    <div class="bg-white p-4 rounded-lg shadow-md">
+      <h3 class="font-bold text-lg text-bubble-gum">¿Ofrecen paquetes completos o solo decoración?</h3>
+      <p class="mt-2 text-gray-700">Ofrecemos tanto servicios individuales como paquetes completos que pueden incluir decoración, catering, música, fotografía y más según tus necesidades.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN 7: TESTIMONIOS -->
+<section id="testimonios" class="bg-white rounded-3xl shadow-lg p-6 mt-10 max-w-5xl mx-auto">
+  <h2 class="text-3xl font-bold text-bubble-gum mb-4 mt-6">Testimonios</h2>
+  <p class="text-gray-500 font-bold mb-6">
+    Lo que dicen nuestros clientes sobre nosotros
+  </p>
+  
+  <div class="flex flex-wrap flex-container gap-4 justify-center">
+    <div class="bg-blush p-5 rounded-xl w-full md:w-1/3 shadow-md testimonial-item">
+      <div class="flex items-center mb-4">
+        <img src="pexels-cineananya-32089501.jpg" alt="Cliente 1" class="w-12 h-12 rounded-full mr-4">
+        <div>
+          <h4 class="font-bold text-bubble-gum">María López</h4>
+          <p class="text-gray-600 text-sm">Cumpleaños infantil</p>
+        </div>
+      </div>
+      <p class="text-gray-700 italic">"El servicio fue impecable, desde la planificación hasta la ejecución. Mi hija y sus amigos quedaron encantados con la fiesta temática de unicornios. ¡Superó todas nuestras expectativas!"</p>
+      <div class="flex mt-3 text-yellow-400">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+      </div>
+    </div>
+    
+    <div class="bg-blush p-5 rounded-xl w-full md:w-1/3 shadow-md testimonial-item">
+      <div class="flex items-center mb-4">
+        <img src="pexels-jose-ortega-688144040-30623475.jpg" alt="Cliente 2" class="w-12 h-12 rounded-full mr-4">
+        <div>
+          <h4 class="font-bold text-bubble-gum">Carlos Rodríguez</h4>
+          <p class="text-gray-600 text-sm">Evento corporativo</p>
+        </div>
+      </div>
+      <p class="text-gray-700 italic">"Contratamos a Pato Party para nuestro evento anual de empresa y quedamos totalmente satisfechos. La atención al detalle y el profesionalismo con el que trabajan hizo que nuestro evento fuera un éxito completo."</p>
+      <div class="flex mt-3 text-yellow-400">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+      </div>
+    </div>
+    
+    <div class="bg-blush p-5 rounded-xl w-full md:w-1/3 shadow-md testimonial-item">
+      <div class="flex items-center mb-4">
+        <img src="pexels-mateus-oliveira-2150975619-32068340.jpg" alt="Cliente 3" class="w-12 h-12 rounded-full mr-4">
+        <div>
+          <h4 class="font-bold text-bubble-gum">Laura Sánchez</h4>
+          <p class="text-gray-600 text-sm">Baby Shower</p>
+        </div>
+      </div>
+      <p class="text-gray-700 italic">"La decoración para mi baby shower fue simplemente mágica. Cada detalle estaba perfectamente coordinado con nuestro tema, y los invitados no dejaron de elogiar lo hermoso que había quedado todo. ¡Volveré a contratarlos sin duda!"</p>
+      <div class="flex mt-3 text-yellow-400">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+      </div>
+    </div>
+  </div>
+  
+  <div class="mt-8 text-center">
+    <button class="bg-bubble-gum text-white font-bold py-2 px-6 rounded-lg hover:bg-blue-400 transition duration-300">
+      Escribir un testimonio
+    </button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-bubble-gum text-white p-6 mt-10 rounded-t-3xl max-w-5xl mx-auto">
+  <div class="flex flex-wrap flex-container justify-between">
+    <div class="w-full md:w-1/4 mb-6 md:mb-0">
+      <h3 class="text-2xl font-bold mb-4">Pato Party</h3>
+      <p class="text-sm">Creando momentos mágicos e inolvidables desde 2013. Especialistas en decoración y organización de eventos.</p>
+      <div class="mt-4 flex space-x-4">
+        <a href="#" class="text-white hover:text-yellow-200 transition">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+          </svg>
+        </a>
+        <a href="#" class="text-white hover:text-yellow-200 transition">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <rect x="2" y="2" width="20" height="20" rx="5"></rect>
+            <circle cx="12" cy="12" r="4"></circle>
+            <circle cx="18" cy="6" r="1"></circle>
+          </svg>
+        </a>
+        <a href="#" class="text-white hover:text-yellow-200 transition">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+    
+    <div class="w-full md:w-1/4 mb-6 md:mb-0">
+      <h4 class="text-lg font-bold mb-4">Enlaces rápidos</h4>
+      <ul class="space-y-2">
+        <li><a href="#nosotros" class="text-white hover:text-yellow-200 transition">Nosotros</a></li>
+        <li><a href="#servicios" class="text-white hover:text-yellow-200 transition">Servicios</a></li>
+        <li><a href="#galeria" class="text-white hover:text-yellow-200 transition">Galería</a></li>
+        <li><a href="#eventos" class="text-white hover:text-yellow-200 transition">Eventos</a></li>
+        <li><a href="#contacto" class="text-white hover:text-yellow-200 transition">Contacto</a></li>
+      </ul>
+    </div>
+    
+    <div class="w-full md:w-1/4 mb-6 md:mb-0">
+      <h4 class="text-lg font-bold mb-4">Servicios</h4>
+      <ul class="space-y-2">
+        <li><a href="#" class="text-white hover:text-yellow-200 transition">Decoraciones</a></li>
+        <li><a href="#" class="text-white hover:text-yellow-200 transition">Shows infantiles</a></li>
+        <li><a href="#" class="text-white hover:text-yellow-200 transition">Catering</a></li>
+        <li><a href="#" class="text-white hover:text-yellow-200 transition">Fotografía</a></li>
+        <li><a href="#" class="text-white hover:text-yellow-200 transition">Música y DJ</a></li>
+      </ul>
+    </div>
+    
+    <div class="w-full md:w-1/4">
+      <h4 class="text-lg font-bold mb-4">Contáctanos</h4>
+      <ul class="space-y-2">
+        <li class="flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+          </svg>
+          <span>+123 456 7890</span>
+        </li>
+        <li class="flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          <span>info@patoparty.com</span>
+        </li>
+        <li class="flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+          <span>Av. Principal 123, Ciudad</span>
+        </li>
+      </ul>
+      
+      <div class="mt-4">
+        <h5 class="font-semibold mb-2">Suscríbete a nuestro boletín</h5>
+        <div class="flex">
+          <input type="email" placeholder="Tu email" class="p-2 w-full rounded-l-md focus:outline-none text-gray-800">
+          <button class="bg-yellow-300 text-blue-900 rounded-r-md px-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="border-t border-white/30 mt-8 pt-6 text-center">
+    <p>&copy; 2025 Pato Party. Todos los derechos reservados.</p>
+    <div class="mt-2 flex justify-center space-x-4 text-sm">
+      <a href="#" class="hover:underline">Términos y Condiciones</a>
+      <a href="#" class="hover:underline">Política de Privacidad</a>
+      <a href="#" class="hover:underline">Cookies</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Script para el menú móvil -->
+<script>
+  document.getElementById('menu-toggle').addEventListener('click', function() {
+    const mobileNav = document.getElementById('mobile-nav');
+    mobileNav.classList.toggle('hidden');
+  });
+</script>
+</body>
+</html>
